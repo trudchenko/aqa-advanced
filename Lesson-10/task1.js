@@ -15,7 +15,7 @@ ebook.printInfo();
 
 book1.title = 'Harry Potter and phenix';
 book1.author = "J.K.";
-book1.year = 1987;
+book1.year = 2000;
 ebook.format = 'doc';
 console.log("\n***Modified objects:");
 book1.printInfo();

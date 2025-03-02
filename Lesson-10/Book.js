@@ -51,18 +51,26 @@ export class Book {
         if (bookArray == null || bookArray.length == 0) {
             throw new Error ("Invalid array");
         } 
+        
+        // Method 1
+        return bookArray.reduce((previousBook,currentBook) => previousBook.year > currentBook.year ? currentBook : previousBook);
+        
+        // Method 2
+        // bookArray.sort((a,b) => a.year-b.year);
+        // return bookArray[0];
 
-        if (bookArray.length == 1) {
-            return bookArray[0];
-        } 
+        // Method 3
+        // if (bookArray.length == 1) {
+        //     return bookArray[0];
+        // } 
 
-        let oldestBook = bookArray[0];
-        for (let i=1; i < bookArray.length; i ++){
-            if (bookArray[i].year < oldestBook.year) {
-                oldestBook = bookArray[i];
-            }
-        }
+        // let oldestBook = bookArray[0];
+        // for (let i=1; i < bookArray.length; i ++){
+        //     if (bookArray[i].year < oldestBook.year) {
+        //         oldestBook = bookArray[i];
+        //     }
+        // }
 
-        return oldestBook;
+        // return oldestBook;
     }
 }
