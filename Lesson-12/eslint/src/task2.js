@@ -8,7 +8,7 @@
 // Викорситайте методи Promise.all та Promise.race передавши їм як аргумент масив з викликами функцій з п.п. 1-2.
 //  Присвойте значення отримані від цих виразів до змінних
 
-function fetchUrl(url) {
+  function fetchUrl(url) {
   return fetch(url)
     .then((response) => response.json())
     .catch((error) => {

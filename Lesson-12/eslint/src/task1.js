@@ -7,7 +7,7 @@ function printText(text, milliseconds) {
 
 printText('some text "some text for test escape"', 3000);
 
-   const a = 1;
+const a = 1;
 const b = 2;
 const c = 8;
 if (a == 0) {
