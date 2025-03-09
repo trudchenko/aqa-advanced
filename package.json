@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./lesson-12/eslint/src",
     "lint:fix": "eslint ./lesson-12/eslint/src --fix",
-    "prepare": "husky && husky install"
+    "prepare": "husky install"
   },
   "author": "",
   "type": "module",
