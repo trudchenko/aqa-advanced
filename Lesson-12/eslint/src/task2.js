@@ -9,41 +9,41 @@
 //  Присвойте значення отримані від цих виразів до змінних
 
 function fetchUrl(url) {
-  return fetch(url)
-    .then((response) => response.json())
-    .catch((error) => {
-      return {error: error.message};
-    });
+    return fetch(url)
+        .then((response) => response.json())
+        .catch((error) => {
+            return {error: error.message};
+        });
 }
 
 function fetchToDo() {
-  return fetchUrl('https://jsonplaceholder.typicode.com/todos/1');
+    return fetchUrl('https://jsonplaceholder.typicode.com/todos/1');
 }
 
 function fetchUser() {
-  return fetchUrl('https://jsonplaceholder.typicode.com/users/1');
+    return fetchUrl('https://jsonplaceholder.typicode.com/users/1');
 }
 
 const promiseArray = [fetchToDo(), fetchUser()];
 
 let promiseAll;
 Promise.all(promiseArray)
-  .then((a) => {
-    promiseAll = a;
-    console.log(promiseAll);
-  })
-  .catch((a) => {
-    promiseAll = a;
-    console.log(promiseAll);
-  });
+    .then((a) => {
+        promiseAll = a;
+        console.log(promiseAll);
+    })
+    .catch((a) => {
+        promiseAll = a;
+        console.log(promiseAll);
+    });
 
 let promiseRace;
 Promise.race(promiseArray)
-  .then((a) => {
-    promiseRace = a;
-    console.log(promiseRace);
-  })
-  .catch((a) => {
-    promiseRace = a;
-    console.log(promiseRace);
-  });
+    .then((a) => {
+        promiseRace = a;
+        console.log(promiseRace);
+    })
+    .catch((a) => {
+        promiseRace = a;
+        console.log(promiseRace);
+    });

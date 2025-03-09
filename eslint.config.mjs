@@ -19,7 +19,7 @@ export default [
   },
   {
     rules:{
-      "@stylistic/js/indent": ["error", 2],
+      "@stylistic/js/indent": ["error", 4],
       "semi": 2,
       "no-useless-escape": 1,
       "eqeqeq": 0,
