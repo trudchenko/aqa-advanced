@@ -24,6 +24,12 @@ describe('GetObject endpoints tests', () => {
 
         expect(resp.data).toMatchObject(testObject);
         expect(resp.data).toEqual(testObject1);
+
+    });
+
+    test('GET: Negative check get object by id', async() => {
+        const negativeResp = await getObject.getObjectById('130');
+        expect(negativeResp.status).toBe(404);
     });
 
     test('GET: Check list objects by ids', async() => {
@@ -45,5 +51,17 @@ describe('GetObject endpoints tests', () => {
         };
        
         expect(objectArray[1]).toEqual(testObject);
+    });
+
+    test('GET: Negative check list objects by ids', async() => {
+
+        const ids = new URLSearchParams();
+        ids.append("id", -3);
+        ids.append("id", -5);
+        ids.append("id", -10);
+
+        const resp = await getObject.listObjectsByIds(ids);
+        expect(resp.status).toBe(200);
+        expect(Array.from(resp.data).length).toBe(0);
     });
 });
